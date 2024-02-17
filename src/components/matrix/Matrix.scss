@@ -7,16 +7,16 @@
 
   &__effect {
     // added default structure, change layout to vertical
-    font: 800 2em/1 sans-serif;
+    font: 800 1.5em/1 sans-serif;
     color: hsl(120deg 100% 50%);
     writing-mode: vertical-rl;
     white-space: nowrap;
     letter-spacing: 1ch;
     //adding shadow tails to the text, and add pseudo-element for coverup, part1)
     position: absolute;
-    text-shadow: -12px 0 8px #0f0;
+    text-shadow: 5px 0 8px rgba(0, 255, 0, 0.8);
     //adding cycling animation for the text, part1)
-    animation: rain 3s linear infinite;
+    animation: rain 20s linear infinite;
 
     //adding shadow tails to the text, and add pseudo-element for coverup, part2)
     &::after {
@@ -24,7 +24,7 @@
       position: absolute;
       z-index: 2;
       inset: 0;
-      background: linear-gradient(180deg, rbg(0 0 0 / 100%), transparent);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 1), transparent);
     }
   }
 }
@@ -32,7 +32,7 @@
 //adding cycling animation for the text, part2)
 @keyframes rain {
   0% {
-    transofrm: translateY(-100%);
+    transform: translateY(-100%);
     rotate: y 0deg;
     opacity: 1;
   }

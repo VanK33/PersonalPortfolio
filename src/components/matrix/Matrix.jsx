@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Matrix.scss";
 
-const matrix = ({ count = 100 }) => {
+const Matrix = ({ count = 100 }) => {
   const [matrices, setMatrics] = useState([]);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const matrix = ({ count = 100 }) => {
       {matrices.map((matrix, index) => (
         <div
           key={index}
-          className={matrix__effect}
+          className={"matrix__effect"}
           style={{
             left: matrix.left,
             transform: matrix.transform,
@@ -52,4 +52,4 @@ const matrix = ({ count = 100 }) => {
   );
 };
 
-export default matrix;
+export default Matrix;
