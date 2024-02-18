@@ -1,0 +1,48 @@
+@use "./variables" as *;
+// responsible for title textural effects
+.glitch {
+  position: relative;
+  color: $text-color;
+  &:before,
+  &:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    clip-path: polygon(15% 80%, 0 20%, 100% 0, 80% 100%, 20% 100%);
+    color: $text-color;
+  }
+
+  &:before {
+    left: 2px;
+    text-shadow: -3px 0 red;
+  }
+
+  &:after {
+    left: -2px;
+    text-shadow: 3px 0 blue;
+    clip-path: polygon(100% 0, 40% 0, 60% 100%, 100% 100%);
+  }
+}
+
+@mixin hover-border-animation($color: $text-color, $width: 3px) {
+  border-bottom: $width solid transparent;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background-color: $color;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.5s ease-out;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+  }
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Matrix.scss";
+import { throttle } from "lodash";
 
 const Matrix = ({ count = 100 }) => {
   const [matrices, setMatrics] = useState([]);
@@ -29,7 +30,17 @@ const Matrix = ({ count = 100 }) => {
       };
     };
 
-    setMatrics(new Array(count).fill(null).map(createMatrixEffect));
+    // use throttle to limite the resizing trigger rate, limit to 200ms
+    const handleResize = throttle(() => {
+      setMatrics(new Array(count).fill(null).map(createMatrixEffect));
+    }, 200);
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      handleResize.cancel(); // cancel all non-execuated throttled function
+      window.removeEventListener("resize", handleResize);
+    };
   }, [count]);
 
   return (
