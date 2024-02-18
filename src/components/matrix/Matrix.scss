@@ -18,6 +18,9 @@
     //adding cycling animation for the text, part1)
     animation: rain 20s linear infinite;
 
+    box-shadow: 0 0 2rem 2rem rgba(0, 0, 0, 0.4);
+    border-radius: 1rem;
+
     //adding shadow tails to the text, and add pseudo-element for coverup, part2)
     &::after {
       content: "";

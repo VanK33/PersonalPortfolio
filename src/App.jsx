@@ -6,13 +6,15 @@ import Portfolio from "./components/pages/Portfolio";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="portfolio" element={<Portfolio />} />
-      </Routes>
-    </Router>
+    <div className="app">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="portfolio" element={<Portfolio />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 

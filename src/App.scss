@@ -1,1 +1,9 @@
+@use "./components/partials/_typography" as *;
+* {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
 
+body {
+  font-family: "Kode Mono", sans-serif;
+}
