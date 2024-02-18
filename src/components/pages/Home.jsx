@@ -8,7 +8,6 @@ const Home = () => {
 
   return (
     <div className="home">
-      {/* hidden now prevent me from dizzy */}
       <Matrix count={count} />
       <section className="home__title-section">
         <p className="home__title-decro">

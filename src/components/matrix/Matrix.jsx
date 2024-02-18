@@ -3,17 +3,16 @@ import "./Matrix.scss";
 import { throttle } from "lodash";
 
 const Matrix = ({ count = 100 }) => {
-  const [matrices, setMatrics] = useState([]);
+  const [matrices, setMatrices] = useState([]);
 
   useEffect(() => {
-    const width = window.innerWidth;
-
     const randomCode = () => {
       const randomCharCode = Math.floor(Math.random() * (127 - 32) + 32);
       return String.fromCharCode(randomCharCode);
     };
 
     const createMatrixEffect = () => {
+      const width = window.innerWidth;
       let str = "";
       for (let i = 0; i < 20; i++) {
         str += randomCode();
@@ -29,11 +28,13 @@ const Matrix = ({ count = 100 }) => {
         content: str,
       };
     };
+    // first initialization of the matrix effect
+    setMatrices(new Array(count).fill(null).map(createMatrixEffect));
 
-    // use throttle to limite the resizing trigger rate, limit to 200ms
+    // use throttle to limite the resizing trigger rate, limit to 300ms
     const handleResize = throttle(() => {
-      setMatrics(new Array(count).fill(null).map(createMatrixEffect));
-    }, 200);
+      setMatrices(new Array(count).fill(null).map(createMatrixEffect));
+    }, 300);
 
     window.addEventListener("resize", handleResize);
 
