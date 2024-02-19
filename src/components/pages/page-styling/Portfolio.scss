@@ -1,0 +1,67 @@
+@use "sass:math";
+@use "../../partials/variables" as *;
+
+.portfolio {
+  // background-color: black;
+  perspective: 2000px;
+  // overflow-x: hidden;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+
+  &__image-ring {
+    max-width: 100%;
+    // height: 90vh;
+    transform-style: preserve-3d;
+    z-index: 10;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  &__image {
+    position: absolute;
+    $imgWidth: 550px;
+    $imgHeight: calc($imgWidth / 7 * 8);
+    width: $imgWidth;
+    height: $imgHeight;
+    left: 50%;
+    top: 50%;
+    margin-left: calc(-1 * $imgWidth / 2);
+    margin-top: calc(-1 * $imgHeight / 2);
+    object-fit: cover;
+    object-position: top;
+    filter: brightness(50%);
+    transition: filter 0.5s;
+
+    // gives depth effect
+    transform: translate3d(0, 0, -1000px);
+
+    // # of profolio snapshots displaying
+    $n: 14;
+    $pDeg: calc(
+      360deg / $n
+    ); // rotating angle based on the # of snapshots presented
+    $r: 1300px;
+
+    backface-visibility: hidden;
+    transition: 0.5s;
+    &:hover {
+      filter: brightness(100%);
+    }
+    @for $i from 1 through $n {
+      &:nth-child(#{$i}) {
+        $deg: $pDeg * ($i - 1);
+        $x: math.sin($deg) * $r;
+        $z: math.cos($deg) * $r * -1;
+        transform: translate3d($x, 0, $z) rotateY(-$deg);
+      }
+    }
+
+    &--adjust-size {
+      object-fit: scale-down;
+      object-position: center;
+    }
+  }
+}

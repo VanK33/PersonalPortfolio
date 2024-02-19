@@ -4,6 +4,7 @@
   height: 100%;
   overflow: hidden;
   background-color: black;
+  z-index: 0;
 
   &__effect {
     // added default structure, change layout to vertical
