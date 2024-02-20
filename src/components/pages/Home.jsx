@@ -50,7 +50,7 @@ const Home = () => {
         <p className="home__title-decro">
           click to <br /> know me
         </p>
-        <h2 className="home__title-name glitch" data-text="YIFEI MA">
+        <h2 className="home__title-name" data-text="YIFEI MA">
           YIFEI MA
         </h2>
         <p className="home__title-position">Jr. Software Developer</p>

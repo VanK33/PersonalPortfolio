@@ -1,8 +1,8 @@
 @use "./variables" as *;
 // responsible for title textural effects
-.glitch {
+@mixin glitch($color: $text-color) {
   position: relative;
-  color: $text-color;
+  color: $color;
   &:before,
   &:after {
     content: attr(data-text);
@@ -16,12 +16,12 @@
 
   &:before {
     left: 2px;
-    text-shadow: -3px 0 red;
+    text-shadow: -2px 0 red;
   }
 
   &:after {
     left: -2px;
-    text-shadow: 3px 0 blue;
+    text-shadow: 2px 0 blue;
     clip-path: polygon(100% 0, 40% 0, 60% 100%, 100% 100%);
   }
 }

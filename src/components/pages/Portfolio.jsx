@@ -10,8 +10,9 @@ import { useWindowContext } from "../HelperFunctions";
 import "./page-styling/Portfolio.scss";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import ErrorModal from "../modal/ErrorModal";
 
-const PortfolioPage = () => {
+const PortfolioPage = ({ openModal, closeModal, isModalOpen }) => {
   const { width } = useWindowContext();
   const count = width < 1100 ? 200 : 350;
 
@@ -141,8 +142,6 @@ const PortfolioPage = () => {
     },
   ];
 
-  // TODO: add on-click to nav to repo, if private, direct to "private repo, unaccessable page"
-  // TODO: Create that page
   return (
     <div className="portfolio">
       <Matrix count={count} />
@@ -169,12 +168,16 @@ const PortfolioPage = () => {
             }`}
             onClick={
               imageObject.private
-                ? () => {}
+                ? () => openModal()
                 : () => handleImageClick(imageObject.git)
             }
           />
         ))}
       </div>
+
+      {isModalOpen && (
+        <ErrorModal closeModal={closeModal} message={"PRIVATE REPO"} />
+      )}
     </div>
   );
 };
