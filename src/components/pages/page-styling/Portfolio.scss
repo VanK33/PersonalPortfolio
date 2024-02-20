@@ -1,5 +1,8 @@
 @use "sass:math";
 @use "../../partials/variables" as *;
+@use "../../partials/special-effect" as *;
+@use "../../partials/variables" as *;
+@use "../page-styling/Home.scss" as *;
 
 .portfolio {
   // background-color: black;
@@ -8,6 +11,23 @@
   position: relative;
   height: 100vh;
   width: 100vw;
+
+  &__title-section {
+    @extend .home__title-section;
+    text-decoration: none;
+    top: 15%;
+    padding: 1rem 2.5rem 1rem 4rem;
+    font-size: 32px;
+  }
+
+  &__title {
+    position: relative;
+    color: $text-color;
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1.5rem;
+  }
 
   &__image-ring {
     // max-width: 100%;
