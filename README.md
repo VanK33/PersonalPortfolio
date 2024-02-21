@@ -4,6 +4,11 @@ Here you will see my introduction, the collection of projects that I have comple
 
 Completed Task:
 - Landing Page
+- Portfolio
   
 Currently Working:
-Portfolio + About Me
+1. About Me
+2. Host the personal perfolio
+
+Some good to have:
+Null
