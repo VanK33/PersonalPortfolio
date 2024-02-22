@@ -74,33 +74,43 @@ const aboutPage = ({ handleImageClick }) => {
           {/* will include a personal highlights */}
           <p className="about__intro-main-title">
             Yifei Ma is a Junior Full Stack Developer specializing in React,
-            Node.js, MySQL, JavaScript, and Excel VBA. Currently holding a
-            contract full-time position at BrainStation as a Teaching Assistant,
-            Yifei is capable of expanding his toolkits beyond what he already
-            knows.
+            Node.js, MySQL, JavaScript, and Excel VBA. His role as a Teaching
+            Assistant at BrainStation underscores his commitment to immersing
+            himself in the field, while also providing ample opportunity to hone
+            his code review skills. Yifei is genuinely interested in applying
+            his toolkit to real-world applications, drawing on his methodical
+            problem-solving abilities to make a tangible impact. His pursuit of
+            practical experience is a testament to his dedication to continuous
+            learning and professional growth.
           </p>
           {/* a personal statement, personal interests, and ambition */}
           <p className="about__intro-sub-title">
             A little bit more about Yifei . Like anyone cares.
           </p>
           <p className="about__intro-text">
-            Yifei is passionate about systematically approaching a problem,
-            researching and designing an approach, and engineering a product
-            that hopefully becomes the solution. His passion for building things
-            and desire to prove himself drove him from studying aerosols
-            chemistry to software development. Yifei firmly believes that the
-            future lies within the realm of computer science and engineering -
-            knowing and understanding programming languages is an essential
-            skill for the future.
+            Yifei's story isn't your typical tech tale. Coming from a chemistry
+            background, he's taken his love for solving puzzles and put it to
+            work in software development. It's not just about switching careers
+            for him; it's about bringing that same enthusiasm for experiments
+            from the lab to the laptop. Even though he's newer to coding, his
+            approach is all about diving deep, figuring things out step by step,
+            and building something cool in the end.
           </p>
           <p className="about__intro-text">
-            I need to come up something which is about the length of this area I
-            need to come up something which is about the length of this area I
-            need to come up something which is about the length of this area I
-            need to come up something which is about the length of this area I
-            need to come up something which is about the length of this area I
-            need to come up something which is about the length of this area I
-            need to come up something which is about the length of this area
+            Starting out, Yifei might not have a big collection of projects to
+            show off, but what he lacks in portfolio pieces, he makes up for
+            with a solid work ethic and a knack for picking up new tech. He's
+            the kind of guy who sees a challenge, gets excited, and starts
+            tinkering to find a solution.
+          </p>
+          <p className="about__intro-text">
+            For Yifei, tech is more than just a job path; it's where he sees his
+            future. He's all in on learning everything he can, not just to land
+            any role but to find a place where he can keep growing, take on
+            interesting projects, and really make his mark. He believes that
+            understanding code is key to shaping the future, and he's determined
+            to be part of that, blending his scientific mindset with his new
+            tech skills to create something that makes a difference.
           </p>
         </div>
         <ul className="about__logo-list">
@@ -118,8 +128,8 @@ const aboutPage = ({ handleImageClick }) => {
               <p
                 className="about__logo-text"
                 style={{
-                  fontSize: logoObject.name === "resume" ? "1.2rem" : "1.65rem",
-                  letterSpacing: logoObject.name !== "resume" ? "0.2rem" : "0",
+                  fontSize: logoObject.name === "resume" ? "1.2rem" : "1.35rem",
+                  textWrap: logoObject.name === "resume" ? "wrap" : "nowrap",
                 }}
               >
                 {logoObject.text}

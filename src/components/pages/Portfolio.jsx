@@ -60,19 +60,19 @@ const PortfolioPage = ({
     {
       name: "CoffeeShop",
       src: coffeeShop,
-      private: true,
+      private: false,
       git: "https://github.com/VanK33/Coffee-Shop",
     },
     {
       name: "TravelSite",
       src: travelSite,
-      private: true,
+      private: false,
       git: "https://github.com/VanK33/Travel-Site-Project",
     },
     {
       name: "BandSite",
       src: bandSite,
-      private: true,
+      private: false,
       git: "https://github.com/VanK33/Band-Site-Project",
     },
     {
@@ -84,7 +84,7 @@ const PortfolioPage = ({
     {
       name: "FirstHackathon",
       src: firstHackathon,
-      private: true,
+      private: false,
       git: "https://github.com/CLProgrammer79/hackathon_findyourpet",
     },
     {
@@ -102,19 +102,19 @@ const PortfolioPage = ({
     {
       name: "CoffeeShop",
       src: coffeeShop,
-      private: true,
+      private: false,
       git: "https://github.com/VanK33/Coffee-Shop",
     },
     {
       name: "TravelSite",
       src: travelSite,
-      private: true,
+      private: false,
       git: "https://github.com/VanK33/Travel-Site-Project",
     },
     {
       name: "BandSite",
       src: bandSite,
-      private: true,
+      private: false,
       git: "https://github.com/VanK33/Band-Site-Project",
     },
     {
@@ -126,7 +126,7 @@ const PortfolioPage = ({
     {
       name: "FirstHackathon",
       src: firstHackathon,
-      private: true,
+      private: false,
       git: "https://github.com/CLProgrammer79/hackathon_findyourpet",
     },
     {

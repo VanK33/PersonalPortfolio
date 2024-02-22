@@ -45,7 +45,6 @@
   &__content-container {
     display: flex;
     flex-direction: row;
-    // justify-content: space-between;
     align-items: center;
     z-index: 1;
     color: $text-color;
@@ -53,7 +52,7 @@
     top: 22%;
 
     width: 100%;
-    height: 66%;
+    min-height: 66%;
     background-color: rgba(0, 0, 0, 0.8);
     border-top: double 5px $text-color;
     border-bottom: double 5px $text-color;
@@ -91,27 +90,27 @@
 
   // below are for the central panel
   &__introduction-text {
-    flex: 5;
+    flex: 7;
     height: 100%;
     display: flex;
     flex-direction: column;
   }
 
   &__intro-main-title {
-    padding: 3rem 1em 2rem 1rem;
+    padding: 2.5rem 1em 1.5rem 1rem;
     font-size: 1.5rem;
     font-weight: 700;
   }
 
   &__intro-sub-title {
-    padding: 2rem 1rem 2rem 1rem;
-    font-size: 1.25rem;
+    padding: 1rem 1rem 1rem 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
     font-style: italic;
   }
 
   &__intro-text {
-    padding: 2rem 1rem 1rem 1rem;
+    padding: 1rem;
     font-size: 1.1rem;
   }
 
@@ -124,7 +123,7 @@
     align-items: flex-end;
     justify-content: flex-end;
     padding-bottom: 2rem;
-    gap: 2%;
+    min-height: 800px;
   }
 
   &__logo-container {
@@ -134,10 +133,10 @@
     justify-content: flex-end;
     position: relative;
     height: 48px;
-
+    margin-bottom: 1rem;
     border: solid transparent 2px;
     border-radius: 25px;
-    width: 275px;
+    width: 200px;
 
     &:hover {
       border: solid $text-color 2px;
@@ -153,6 +152,7 @@
     padding: 0 1rem 0 2rem;
     width: 100%;
     text-align: center;
+    text-wrap: nowrap;
   }
 
   &__logo {
