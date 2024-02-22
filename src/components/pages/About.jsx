@@ -4,10 +4,54 @@ import github from "../../assets/logos/icons8-github.svg";
 import linkedIn from "../../assets/logos/icons8-linked-in.svg";
 import weChat from "../../assets/logos/icons8-wechat-48.png";
 import resume from "../../assets/logos/icons8-resume-48.png";
+import githubLarge from "../../assets/logos/icons8-github-100.png";
+import linkedInLarge from "../../assets/logos/icons8-linkedin-100.png";
+import weChatLarge from "../../assets/logos/icons8-wechat-96.png";
+import resumeLarge from "../../assets/logos/icons8-resume-96.png";
 import "./page-styling/About.scss";
-import selfie from "../../assets/images/IMG_4877.png";
+import resumePDF from "../../assets/files/Resume.pdf";
 
-const aboutPage = () => {
+const aboutPage = ({ handleImageClick }) => {
+  const handleDownloadFile = (src, filename) => {
+    const link = document.createElement("a");
+    link.href = src;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const logoArray = [
+    {
+      name: "github",
+      src: github,
+      text: "GITHUB",
+      XL: githubLarge,
+      url: "https://github.com/VanK33",
+    },
+    {
+      name: "linkedIn",
+      src: linkedIn,
+      text: "LINKED-IN",
+      XL: linkedInLarge,
+      url: "https://www.linkedin.com/in/jeff-yifei-ma",
+    },
+    {
+      name: "weChat",
+      src: weChat,
+      text: "VANK33",
+      XL: weChatLarge,
+      url: "",
+    },
+    {
+      name: "resume",
+      src: resume,
+      text: "DOWNLOAD RESUME",
+      XL: resumeLarge,
+      url: "",
+    },
+  ];
+
   return (
     <div className="about">
       <Matrix count={200} />
@@ -59,20 +103,43 @@ const aboutPage = () => {
             need to come up something which is about the length of this area
           </p>
         </div>
-        <div className="about__logo-list">
-          <div>
-            <img src={github} alt="github logo" />
-          </div>
-          <div>
-            <img src={linkedIn} alt="linkedIn logo" />
-          </div>
-          <div>
-            <img src={weChat} alt="weChat logo" />
-          </div>
-          <div>
-            <img src={resume} alt="resume logo" />
-          </div>
-        </div>
+        <ul className="about__logo-list">
+          {logoArray.map((logoObject, index) => (
+            <li
+              key={index}
+              className="about__logo-container"
+              style={{
+                borderRadius:
+                  logoObject.name === "resume" || logoObject.name === "linkedIn"
+                    ? "25px 5px 5px 25px"
+                    : "25px 10px 10px 25px",
+              }}
+            >
+              <p
+                className="about__logo-text"
+                style={{
+                  fontSize: logoObject.name === "resume" ? "1.2rem" : "1.65rem",
+                  letterSpacing: logoObject.name !== "resume" ? "0.2rem" : "0",
+                }}
+              >
+                {logoObject.text}
+              </p>
+              <img
+                src={logoObject.src}
+                alt={`${logoObject.name} logo`}
+                className="about__logo"
+                style={{ borderImageSource: `url(${logoObject.XL})` }}
+                onClick={() => {
+                  if (logoObject.name === "resume") {
+                    handleDownloadFile(resumePDF, "YIFEI MA - RESUME.PDF");
+                  } else if (logoObject.name !== "weChat") {
+                    handleImageClick(logoObject.url);
+                  }
+                }}
+              />
+            </li>
+          ))}
+        </ul>
       </section>
     </div>
   );

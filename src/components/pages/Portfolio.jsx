@@ -12,7 +12,12 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ErrorModal from "../modal/ErrorModal";
 
-const PortfolioPage = ({ openModal, closeModal, isModalOpen }) => {
+const PortfolioPage = ({
+  openModal,
+  closeModal,
+  isModalOpen,
+  handleImageClick,
+}) => {
   const { width } = useWindowContext();
   const count = width < 1100 ? 200 : 350;
 
@@ -49,10 +54,6 @@ const PortfolioPage = ({ openModal, closeModal, isModalOpen }) => {
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
-
-  const handleImageClick = (url) => {
-    window.location.href = url;
-  };
 
   // projects are repeated twice to compensate for the visual effect of the ring
   const imageObjectArray = [

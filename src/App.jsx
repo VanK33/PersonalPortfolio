@@ -17,13 +17,20 @@ function App() {
     setIsModalOpen(false);
   };
 
+  const handleImageClick = (url) => {
+    window.location.href = url;
+  };
+
   return (
     <div className="app">
       <Router>
         <WindowSizeProvider>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="about" element={<About />} />
+            <Route
+              path="about"
+              element={<About handleImageClick={handleImageClick} />}
+            />
             <Route
               path="portfolio"
               element={
@@ -31,6 +38,7 @@ function App() {
                   openModal={openModal}
                   closeModal={closeModal}
                   isModalOpen={isModalOpen}
+                  handleImageClick={handleImageClick}
                 />
               }
             />
