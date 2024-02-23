@@ -5,10 +5,14 @@ Here you will see my introduction, the collection of projects that I have comple
 Completed Task:
 - Landing Page
 - Portfolio
+- About Me
   
-Currently Working:
-1. About Me
-2. Host the personal perfolio
 
-Some good to have:
-Null
+Short-term plan:
+- Adding support for mobile/tablet support
+
+
+Long-term plan:
+- Adding secondary language support - Mandrain
+- Update visual disgning
+- Expanding on existing page to incorporate new updates
