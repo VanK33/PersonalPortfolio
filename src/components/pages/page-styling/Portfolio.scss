@@ -58,11 +58,11 @@
     transform: translate3d(0, 0, -1000px);
 
     // # of profolio snapshots displaying
-    $n: 14;
+    $n: 16;
     $pDeg: calc(
       360deg / $n
     ); // rotating angle based on the # of snapshots presented
-    $r: 1300px;
+    $r: 1450px;
 
     backface-visibility: hidden;
     transition: 0.5s;

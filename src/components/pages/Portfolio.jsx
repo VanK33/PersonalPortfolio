@@ -5,6 +5,7 @@ import coffeeShop from "../../assets/images/Coffee-Shop.png";
 import inStock from "../../assets/images/InStock.png";
 import firstHackathon from "../../assets/images/First-Hackathon.png";
 import pickYourDish from "../../assets/images/PickYourDish.png";
+import personalPortfolio from "../../assets/images/PersonalPortfolio.png";
 import Matrix from "../matrix/Matrix";
 import { useWindowContext } from "../HelperFunctions";
 import "./page-styling/Portfolio.scss";
@@ -100,6 +101,12 @@ const PortfolioPage = ({
       git: "https://github.com/VanK33/PickYourDish",
     },
     {
+      name: "Personal Portfolio",
+      src: personalPortfolio,
+      private: false,
+      git: "https://github.com/VanK33/PersonalPortfolio",
+    },
+    {
       name: "CoffeeShop",
       src: coffeeShop,
       private: false,
@@ -140,6 +147,12 @@ const PortfolioPage = ({
       src: pickYourDish,
       private: false,
       git: "https://github.com/VanK33/PickYourDish",
+    },
+    {
+      name: "Personal Portfolio",
+      src: personalPortfolio,
+      private: false,
+      git: "https://github.com/VanK33/PersonalPortfolio",
     },
   ];
 
